@@ -1,0 +1,34 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no TopDesignName="C:\CETEST\amp_1900\bjt_pkg_prj\networks\kesi_bjt_1"
+define kesi_bjt ( _net79  _net45  _net85 ) 
+parameters  BETA=160 
+model BJTM1 BJT NPN=1 PNP=0 Bf=BETA Vaf=50 Ise=0.02e-12 Lateral=0 RbModel=0 Approxqb=1 
+"BJTM1":BJT1  _net102 _net103 _net104 Mode=1 Noise=yes 
+C:C1  _net102 _net104 C=120.0 fF 
+C:C2  _net103 _net104 C=120 pF 
+L:L3  _net104 _net85 L=1.0 nH Noise=yes  
+L:L1  _net45 _net103 L=1.0 nH R=0.01 Noise=yes  
+L:L2  _net79 _net102 L=1.0 nH Noise=yes  
+end kesi_bjt
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+SweepVar="IBB" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
+
+SweepPlan: DC1_stim Start=10 uA Stop=100 uA Step=10 uA 
+
+OutputPlan:DC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0
+
+
+IBB=0
+I_Source:SRC2  0 VBE Type="I_DC" Idc=IBB 
+V_Source:SRC1  _net37 0 Type="V_DC" Vdc=3 V SaveCurrent=1 
+Short:IC  _net37 _net15 Mode=0 SaveCurrent=yes 
+kesi_bjt:Q1  _net15 VBE 0 BETA=160 

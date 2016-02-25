@@ -1,0 +1,46 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no TopDesignName="C:\CETEST\AC_SIM_LLC_prj\networks\KESSIS_AC_Stability"
+Options:Options1  Temp=16.85 Tnom=16.85 TopologyCheck=yes ForceS_Params=yes GiveAllWarnings=yes MaxWarnings=10 ForceM_Params=yes InitialGuessAnnotation=0 TopologyCheckMessages=no  
+aele Meas4=1;UFM_PLUS=10*log(1/((1-U)**2));
+aele Meas3=1;UFM_minus = 10*log(1/((1+U)**2));
+aele U=(mag(S11)*mag(S12)*mag(S21)*mag(S22))/(1-(mag(S11))**2)*(1-(mag(S22))**2);
+aele StabFact1=stab_fact(S);
+
+;#@# autodisplay="Circles_Stability"
+;#@# autodisplay="Circles_Ga_Stab"
+;#@# autodisplay="Circles_Ga_NF"
+aele MaxGain2=max_gain(S);
+aele VSWR1=vswr(S11);
+aele MaxGain1=max_gain(S);
+aele mag_delta = mag(S11*S22 - S12*S21);
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=100 MHz Stop=2 GHz Step=100 MHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+
+X=1.0
+Vbias=2
+"BJTM1":BJT1  _net174 _net175 0 Mode=1 Noise=yes 
+Short:DC_Block2  _net174 Vout Mode=1 
+R:RC  Vcc _net168 R=595 Ohm Noise=yes 
+Port:Term1  Vin 0 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  Vout 0 Num=2 Z=50 Ohm Noise=yes 
+V_Source:SRC1  Vcc 0 Type="V_DC" Vdc=Vbias SaveCurrent=1 
+Short:DC_Feed1  _net168 _net174 Mode=-1 
+R:RB  _net168 _net161 R=56 kOhm Noise=yes 
+Short:DC_Feed2  _net161 _net175 Mode=-1 
+Short:DC_Block3  Vin _net175 Mode=1 
+C:C1  _net175 _net154 C=1 pF 
+R:R1  _net154 0 R=50 Ohm Noise=yes 
+model BJTM1 BJT NPN=1 PNP=0 Bf=160 Vaf=50 Ise=0.02E-12 Lateral=0 RbModel=0 Approxqb=1 
+
+Z_IF=if freq<100 MHz then 0.001 else 1e99 endif
+Z_RF=if freq>100 MHz then 0.001 else 1e99 endif

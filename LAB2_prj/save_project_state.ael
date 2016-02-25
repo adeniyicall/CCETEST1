@@ -1,0 +1,10 @@
+{
+    decl winInstP, dsnPtr;
+    de_load_design ("kesi_test", 0);
+    winInstP = de_create_window(SCHEMATIC_WINDOW, NULL, -1688, -290, 1680, 1028);
+    dsnPtr = de_load_design("kesi_test", 0);
+    if (dsnPtr != NULL && winInstP != NULL)
+    {
+        deutil_file_open_update_window(winInstP, dsnPtr, "kesi_test");
+    }
+}

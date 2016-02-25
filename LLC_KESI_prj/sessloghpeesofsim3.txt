@@ -1,0 +1,39 @@
+Simulation / Synthesis Messages
+
+Warning detected by hpeesofsim during SP analysis `SP1'.
+    The simulation temperature (25.0 C) is not the same as the IEEE standard
+    noise temperature (290 K or 16.85 C) in the noise analysis `SP1'.
+    If the simulation temperature is not equal to the IEEE standard temperature,
+    then the loss and the noise figure will not agree for a passive circuit.
+    The `Temp' parameter on the Options item can be set to 16.85 C to
+    eliminate this warning message.
+
+Status / Summary
+
+
+hpeesofsim (*) 331.200 May  6 2008 (built: 05/06/08 00:26:15)
+Copyright Agilent Technologies, 1989-2008.
+
+SP SP1[1] <C:\CETEST\LLC_KESI_prj\networks\llc_modify_1>   freq=(1 GHz->10 GHz)
+..........
+
+DC DC1[1] <C:\CETEST\LLC_KESI_prj\networks\llc_modify_1>   IBB=(1e-03->10e-03)
+.
+.
+.........
+
+Resource usage:
+    Total stopwatch time: 0.94 seconds.
+
+-------------------------------------------------------------------------------
+Simulation finished: dataset `llc_modify_1' written in:
+  `C:\CETEST\LLC_KESI_prj/data'
+-------------------------------------------------------------------------------
+
+
+---------------------------------------
+----  Creating New Display Window  ----
+----          Please Wait...       ----
+
+----         Window Created        ----
+---------------------------------------

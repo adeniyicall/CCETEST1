@@ -1,0 +1,27 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no TopDesignName="kesi_test"
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+SweepVar="vdc" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
+
+SweepPlan: DC1_stim Start=1 Stop=10 Step=0.5 
+
+OutputPlan:DC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0
+
+V_Source:SRC1  Vcc _net148 Type="V_DC" Vdc=5.0 SaveCurrent=1 
+
+vdc=5.0
+model BJTM1 BJT NPN=1 PNP=0 Is=4.08E-16 Bf=166 Nf=1.03 Vaf=25 Ikf=0.02325 Ise=1.218E-12 Ne=2 Br=5.123 Nr=1 Var=0 Ikr=0.12 Isc=4.08E-12 Nc=2 Rb=59.2 Irb=0 Rbm=14.1 Re=.833 Rc=22 Imax=1 Cje=3.123E-13 Vje=.85 Mje=2.13E-13 Vjc=0.75 Mjc=.5 Xcjc=.22 Cjs=1.65E-13 Vjs=0.7 Mjs=.5 Fc=.5 Xtf=3.16 Tf=7.97E-12 Vtf=0 Itf=.0465 Ptf=18 Tr=1.6E-9 Af=1 Ab=1 Fb=1 Iss=4.96E-13 Ns=1 Nk=.5 Ffe=1 Lateral=0 RbModel=0 Approxqb=1 Tnom=25 Eg=-13 Xtb=2.2 Xti=8 
+"BJTM1":BJT1  _net112 _net115 _net114 Mode=1 Noise=yes 
+R:R2  _net115 0 R=45 Ohm Noise=yes 
+R:R4  _net114 0 R=25 Ohm Noise=yes 
+R:R3  _net148 _net112 R=40 Ohm Noise=yes 
+R:R1  _net148 _net115 R=10 Ohm Noise=yes 

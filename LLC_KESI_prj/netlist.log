@@ -1,0 +1,41 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no TopDesignName="C:\CETEST\LLC_KESI_prj\networks\llc_modify_1_with_port_KESI78"
+define llc_modify_1_with_port_KESI ( _net443  _net533  _net523 ) 
+parameters  beta=160 
+R:R1  _net532 _net528 R=56 kOhm Noise=yes 
+model BJTM1 BJT NPN=1 PNP=0 Bf=160 Vaf=50 Ise=0.02E-12 Lateral=0 RbModel=0 Approxqb=1 
+C:C3  _net408 _net523 C=10 pF 
+R:R2  _net443 _net532 R=595 Ohm Noise=yes 
+L:L3  _net532 _net408 L=120 nH Noise=yes  
+"BJTM1":BJT1  _net408 _net528 _net523 Mode=1 Noise=yes 
+C:C2  _net533 _net528 C=10 pF 
+end llc_modify_1_with_port_KESI
+llc_modify_1_with_port_KESI:Q2  _net30 _net29 0 beta=160 
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+SweepVar="VCE" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
+
+SweepPlan: DC1_stim Start=0 Stop=5 Step=0.1 
+
+OutputPlan:DC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0
+
+ParamSweep:Sweep1 SimInstanceName[1]="DC1" StatusLevel=2 SweepVar="IBB" SweepPlan="Sweep1_stim" 
+
+SweepPlan: Sweep1_stim Start=20 uA Stop=100 uA Step=10 uA 
+
+
+IBB =0 A
+VCE = 0 V
+V_Source:SRC1  _net28 0 Type="V_DC" Vdc=VCE SaveCurrent=1 
+Short:IC  _net28 _net30 Mode=0 SaveCurrent=yes 
+I_Source:SRC2  0 _net29 Type="I_DC" Idc=IBB 
+
+;#@# autodisplay="BJT_curve_tracer"

@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<COMPONENTS>
+  <COMPONENT>
+    <NAME>llc_main</NAME>
+    <VENDOR>C:\CETEST\LLC_KESI_prj\networks</VENDOR>
+    <DESCRIPTION>llc_main</DESCRIPTION>
+    <LIBRARY>Sub-networks</LIBRARY>
+    <PLACEMENT>LAYOUT</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE>
+</LICENSE>
+  </COMPONENT>
+  <COMPONENT>
+    <NAME>llc_modify_1</NAME>
+    <VENDOR>C:\CETEST\LLC_KESI_prj\networks</VENDOR>
+    <DESCRIPTION>llc_modify_1</DESCRIPTION>
+    <LIBRARY>Sub-networks</LIBRARY>
+    <PLACEMENT>LAYOUT</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE>
+</LICENSE>
+  </COMPONENT>
+  <COMPONENT>
+    <NAME>llc_modify_1_with_port</NAME>
+    <VENDOR>C:\CETEST\LLC_KESI_prj\networks</VENDOR>
+    <DESCRIPTION>llc_modify_1_without_port</DESCRIPTION>
+    <LIBRARY>Sub-networks</LIBRARY>
+    <PLACEMENT>LAYOUT</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE>
+</LICENSE>
+  </COMPONENT>
+  <COMPONENT>
+    <NAME>DC_CURVE_MODIFIER_1</NAME>
+    <VENDOR>C:\CETEST\LLC_KESI_prj\networks</VENDOR>
+    <DESCRIPTION>DC_CURVE_MODIFIER_1</DESCRIPTION>
+    <LIBRARY>Sub-networks</LIBRARY>
+    <PLACEMENT>LAYOUT</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE>
+</LICENSE>
+  </COMPONENT>
+  <COMPONENT>
+    <NAME>llc_modify_1_without_port</NAME>
+    <VENDOR>C:\CETEST\LLC_KESI_prj\networks</VENDOR>
+    <DESCRIPTION>llc_modify_1</DESCRIPTION>
+    <LIBRARY>Sub-networks</LIBRARY>
+    <PLACEMENT>LAYOUT</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE>
+</LICENSE>
+  </COMPONENT>
+  <COMPONENT>
+    <NAME>llc_modify_1_with_port_untitled</NAME>
+    <VENDOR>C:\CETEST\LLC_KESI_prj\networks</VENDOR>
+    <DESCRIPTION>untitled3</DESCRIPTION>
+    <LIBRARY>Sub-networks</LIBRARY>
+    <PLACEMENT>LAYOUT</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE>
+</LICENSE>
+  </COMPONENT>
+  <COMPONENT>
+    <NAME>llc_modify_1_with_port_KESI78</NAME>
+    <VENDOR>C:\CETEST\LLC_KESI_prj\networks</VENDOR>
+    <DESCRIPTION>untitled4PORT_KESI</DESCRIPTION>
+    <LIBRARY>Sub-networks</LIBRARY>
+    <PLACEMENT>LAYOUT</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE></LICENSE>
+  </COMPONENT>
+  <COMPONENT>
+    <NAME>llc_modify_1_with_port_KESI</NAME>
+    <VENDOR>C:\CETEST\LLC_KESI_prj\networks</VENDOR>
+    <DESCRIPTION>llc_modify_1_with_port_original</DESCRIPTION>
+    <LIBRARY>Sub-networks</LIBRARY>
+    <PLACEMENT>LAYOUT</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE>N/A</LICENSE>
+  </COMPONENT>
+</COMPONENTS>
